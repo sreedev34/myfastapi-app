@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myfastapi-app
+  labels:
+    app: myfastapi-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myfastapi-app
+  template:
+    metadata:
+      labels:
+        app: myfastapi-app
+    spec:
+      containers:
+        - name: myfastapi-app
+          image: sreedev34/myfastapi-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
