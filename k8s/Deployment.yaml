@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: myfastapi-app
-          image: sreedev34/fast-api-chatbot:1
+          image: sreedev34/myfastapi-app:2
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
